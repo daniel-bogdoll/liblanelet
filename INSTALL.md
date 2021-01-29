@@ -10,6 +10,12 @@ There are three different installation approaches:
 
 On generic linux systems you have to build the core packages by hand:
 
+### Install [checkinstall](https://help.ubuntu.com/community/CheckInstall) to keep track of installed files
+
+```bash
+sudo apt-get update && sudo apt-get install checkinstall
+```
+
 ### Install external dependencies
 
 ```bash
@@ -23,7 +29,7 @@ git clone https://github.com/fzi-forschungszentrum-informatik/icmaker.git
 mkdir icmaker/build
 cd icmaker/build
 cmake .. -DCMAKE_INSTALL_PREFIX=../export
-make install
+checkinstall
 export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:$PWD/../export
 ```
 
@@ -34,7 +40,7 @@ git clone https://github.com/fzi-forschungszentrum-informatik/liblanelet.git
 mkdir liblanelet/build
 cd liblanelet/build
 cmake .. -DCMAKE_INSTALL_PREFIX=../export
-make install
+checkinstall
 export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:$PWD/../export
 ```
 
